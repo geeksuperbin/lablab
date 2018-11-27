@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<status> 
+  <taskProcessingNum>0</taskProcessingNum>  
+  <version>5.0.2</version>  
+  <memory>50</memory>  
+  <cpu>6</cpu>  
+  <disk>49</disk>  
+  <time>22:41</time>  
+  <model>Express</model>  
+  <pluginNum>1631</pluginNum>  
+  <vulNum>4186</vulNum> 
+</status>
