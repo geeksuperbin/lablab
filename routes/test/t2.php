@@ -12,5 +12,13 @@ Route::get('database/t4','TestDatabaseController@t4');
 
 
 
+Route::get('database/t5','TestDatabaseController@t5');
+Route::get('database/t6','TestDatabaseController@t6');
+Route::get('database/t7','TestDatabaseController@t7');
+Route::get('database/t8','TestDatabaseController@t8');
+Route::get('database/t9','TestDatabaseController@t9');
+
+
+
 
 

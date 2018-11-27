@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\DB; //引入DB Facades 门脸
 use Illuminate\Support\Facades\Log; //引入Log Facades 门脸
 use Carbon\Carbon;
 
+use App\User;
+use App\Observers\UserObserver;
+
+
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -63,6 +68,9 @@ class AppServiceProvider extends ServiceProvider
 
 
 
+
+    // 注册用户模型观察者
+    User::observe(UserObserver::class);
 
 
 

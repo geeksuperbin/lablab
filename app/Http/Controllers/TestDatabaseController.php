@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Flight;
+use App\User;
+use App\Phone;
+use App\Comment;
+use App\Role;
 
 class TestDatabaseController extends Controller
 {
@@ -46,10 +50,6 @@ class TestDatabaseController extends Controller
     }
 
 
-    public function t5()
-    {
-        return;
-    }
 
 
     /*
@@ -197,7 +197,7 @@ class TestDatabaseController extends Controller
 
 //       $s =  DB::table('users')->count();
 
-        $res1 = Flight::all();
+        // $res1 = Flight::all();
 
 //        foreach( $flights as $flight){
 //            echo $flight->name.'<br>';
@@ -208,19 +208,133 @@ class TestDatabaseController extends Controller
 //
 //        }
 
-        $res2 = Flight::find(1);
+        // $res2 = Flight::find(1);
 
-        dump($res1);
-        dump($res2);
+        // dump($res1);
+        // dump($res2);
 
 
         $a = 1;
 
 
+    }
 
 
+    public function t5()
+    {
+        // $flight = Flight::find(5);
+        // $flight->delete();
+
+        // $res = $flight->trashed();
+        // dump($res);
+        // $res = $flight->delete();
+        // // dd('1222');
+        // $a = 1;
+        // dump($res);
+
+        // $flight = Flight::all();
+        // dump($flight);
+
+        // $res = Flight::destroy([1,3,4]);
+
+        // $a = 1;
+
+        // $res = Flight::withTrashed()->where('deleted_at', '<>', null)->get();
+        // dump($res);
+
+
+        // $res1 = Flight::onlyTrashed()->get();
+        // dump($res1);
+
+        // $res = Flight::withTrashed()->where('deleted_at', '<>', null)->restore();
+        // dump($res);
+
+        // $res = Flight::withTrashed()->where('id', 5)->forceDelete();
+        // dump($res);
+
+
+        $res = User::all();
+
+        dump($res);
+
+        $res1 = User::withoutGlobalScope('password')->get();
+        dump($res1);
+
+
+        $res3 = User::all();
+
+        dump($res3);
+    }
+
+    public function t6()
+    {
+        // $res3 = User::all();
+        //
+        // dump($res3);
+        //
+        // $res4 = User::popular()->get();
+        // dump($res4);
+        //
+        // $res5 = User::all();
+        //
+        // dump($res5);
+
+        // $res6 = User::create([
+        //     'name' => 'kekekeke',
+        //     'email' =>'222@1111.com',
+        //     'password' => 90
+        //
+        // ]);
+
+        // dump($res6);
+
+        // $res7 = User::destroy(3);
+        // dump($res7);
+
+        // $phone = User::find(1)->phone;
+
+        // dump($phone);
+
+
+        // $user = Phone::find(1)->user;
+        // dump($user);
+
+        // $comments = User::find(1)->comments;
+        // dump($comments);
+        //
+        // $comments = User::find(1)->comments()->where('id',1)->get();
+        // dump($comments);
+
+        // $user  = Comment::find(1)->user;
+        // dump($user);
+
+        // $roles = User::find(1)->roles;
+        // dump($roles); // 角色类集合
+        //
+        // // 当前用户有管理员身份
+        // $role = User::find(1)->roles()->where('name','超级管理员')->count();
+        // dump($role);
+
+        // 当前角色属于那些用户
+        //  $users = Role::find(3)->users;
+        //
+        //  dump($users);
+
+
+        // 访问中间表数据
+        $roles = User::find(1)->roles;
+        //
+        // foreach($roles as $role){
+        //     // 打印角色 id
+        //     dump($role->pivot->role_id);
+        // }
+
+        dump($roles);
 
 
 
     }
+
+
+
 }
